@@ -1,89 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Privacy Policy — GOD MODE</title>
-<meta name="description" content="How GOD MODE collects, uses, stores and protects your data, including data accessed through Google APIs.">
+<meta name="description" content="How GOD MODE (GOD MODE) collects, uses, stores and protects your data, including data accessed through Google Auth and the Gmail and Calendar APIs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#0a0b0f;--panel:#12141c;--line:#23262f;--ink:#eef0f6;--muted:#a2a7b6;--brand:#c9a24a;--brand2:#f2d98c}
+  :root{
+    --ink:#0a0806;--panel:#15110b;--panel-2:#1c160d;
+    --gold:#c9a24b;--gold-soft:#e7cd8b;--gold-bright:#f4dfa2;--bronze:#8a6d2e;
+    --ivory:#ece4d3;--muted:#9c907a;--faint:#6f6552;
+    --line:rgba(201,162,75,.20);--line-2:rgba(201,162,75,.42);
+    --display:"Cinzel",Georgia,serif;--serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",monospace;
+    --maxw:1000px;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;line-height:1.7}
-  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
-  header{border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.14em;font-size:15px;text-decoration:none;color:var(--ink)}
-  .logo .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--brand2),var(--brand));display:grid;place-items:center;color:#1a1200;font-weight:900}
-  .nav a.home{color:var(--muted);text-decoration:none;font-size:14px}
-  main{padding:52px 0 70px}
-  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin-bottom:8px}
-  .updated{color:var(--muted);font-size:14px;margin-bottom:34px}
-  h2{font-size:20px;margin:34px 0 10px;letter-spacing:-.01em}
-  p,li{color:#cfd3df;font-size:16px;margin-bottom:12px}
-  ul{padding-left:22px}
-  a{color:var(--brand2)}
-  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:18px 0}
-  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;
+    background:radial-gradient(ellipse 100% 80% at 50% 30%,#15120c 0%,#0c0a07 48%,#050403 100%) fixed;}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.09;mix-blend-mode:overlay;background-size:190px 190px;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{position:relative;z-index:2}
+  .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:.01em;color:var(--ivory)}
+  .gold-text{background:linear-gradient(96deg,var(--gold-bright),var(--gold-soft) 42%,var(--bronze));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  a{color:var(--gold-soft)}
+  .util{background:#080604;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:var(--muted)}
+  .util-inner{display:flex;align-items:center;justify-content:space-between;height:34px}
+  .util a{color:#a89d85;text-decoration:none} .util .on{color:var(--gold)}
+  header.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:rgba(9,7,5,.78);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:.7em;font-family:var(--display);font-weight:700;font-size:1.16rem;letter-spacing:.15em;color:var(--ivory);text-transform:uppercase;text-decoration:none}
+  .brand .mark{height:42px;width:auto;flex:none;display:block}
+  .nav-back{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:#c7bda7;text-decoration:none;text-transform:uppercase}
+  .nav-back:hover{color:var(--gold-soft)}
+  .doc{padding:64px 0 90px}
+  .eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  .doc h1{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 6px}
+  .updated{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--faint);margin-bottom:38px}
+  .doc h2{font-size:1.28rem;margin:38px 0 12px;color:var(--gold-bright)}
+  .doc p,.doc li{color:#cabfa8;font-size:1.02rem;margin-bottom:12px}
+  .doc ul{padding-left:22px;margin-bottom:8px}
+  .doc strong{color:var(--ivory)}
+  .box{border:1px solid var(--line-2);border-radius:14px;background:linear-gradient(180deg,rgba(28,22,13,.75),rgba(10,8,6,.7));padding:22px 24px;margin:20px 0}
+  .box p:last-child{margin-bottom:0}
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  .foot-inner a{color:#a89d85;text-decoration:none}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="/"><span class="mark">G</span> GOD&nbsp;MODE</a>
-    <a class="home" href="/">← Back to home</a>
-  </div>
-</header>
-<main class="wrap">
-  <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: 4 July 2026</div>
+<div class="wrap">
+  <div class="util"><div class="container util-inner">
+    <div><a class="on" href="/">GOD MODE</a></div>
+    <div><a href="/privacy.html">PRIVACY</a> &nbsp;·&nbsp; <a href="/terms.html">TERMS</a></div>
+  </div></div>
 
-  <p>This Privacy Policy explains how GOD MODE (“GOD MODE”, “we”, “us”) collects, uses, stores and protects your information when you use our AI automation assistant, including any data we access through Google APIs on your behalf.</p>
+  <header class="nav"><div class="container nav-inner">
+    <a href="/" class="brand"><img class="mark" src="assets/img/crest.png" alt="GOD MODE" /> GOD MODE</a>
+    <a href="/" class="nav-back">← Back to site</a>
+  </div></header>
 
-  <h2>1. Who we are</h2>
-  <p>GOD MODE is an AI automation assistant that helps business owners manage their email, calendar and daily admin. You can contact us any time at <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
+  <main class="doc"><div class="container">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy <span class="gold-text">Policy</span></h1>
+    <div class="updated">Last updated: 4 July 2026</div>
 
-  <h2>2. Information we access and collect</h2>
-  <ul>
-    <li><strong>Google account data</strong> — with your explicit permission, we access your Gmail messages, the ability to draft and send email, your Google Calendar events, and your basic profile and email address.</li>
-    <li><strong>Content you provide</strong> — instructions, approvals and settings you give GOD MODE while using the service.</li>
-    <li><strong>Technical data</strong> — basic logs needed to operate the service securely (for example, error and access logs).</li>
-  </ul>
+    <p>This Privacy Policy explains how <strong>GOD MODE</strong> (“we”, “us”) collects, uses, stores and protects your information — including any data we access through Google Auth and the Google APIs when you connect your Google account.</p>
 
-  <h2>3. How we use your information</h2>
-  <p>We use the data above only to provide the features you ask for:</p>
-  <ul>
-    <li>Reading and summarising your inbox so you know what needs attention.</li>
-    <li>Drafting and sending emails and follow-ups that you approve.</li>
-    <li>Reading your calendar to find availability and help schedule meetings.</li>
-    <li>Identifying which account GOD MODE is acting for and signing you in.</li>
-  </ul>
+    <h2>1. Who we are</h2>
+    <p>GOD MODE is an automation platform that helps business operators manage their email, calendar and daily admin. When you sign in with Google and grant permission, our system acts on the tasks you approve. Contact us any time at <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
 
-  <h2>4. Google API Limited Use disclosure</h2>
-  <div class="box">
-    <p>GOD MODE’s use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
-    <p style="margin-bottom:0">Specifically, we do <strong>not</strong> use Google user data to serve advertisements, we do <strong>not</strong> sell Google user data, and we do <strong>not</strong> use it to train generalised AI or machine-learning models. Human access to your Google data is not permitted except with your explicit consent, for security purposes, to comply with applicable law, or as part of aggregated and anonymised operations.</p>
-  </div>
+    <h2>2. Information we access</h2>
+    <ul>
+      <li><strong>Google account data</strong> — with your explicit permission on Google’s consent screen, we access your Gmail messages, the ability to draft and send email, your Google Calendar events, and your basic profile and email address.</li>
+      <li><strong>Content you provide</strong> — instructions, approvals and settings you give the platform.</li>
+      <li><strong>Technical data</strong> — basic security and error logs needed to run the service.</li>
+    </ul>
 
-  <h2>5. Data sharing</h2>
-  <p>We do not sell your data. We only share it with the service providers strictly required to operate GOD MODE (for example, secure cloud hosting), and only to the extent needed to deliver the features above. These providers are bound to protect your data and use it only on our instructions.</p>
+    <h2>3. How we use it</h2>
+    <ul>
+      <li>Reading and summarising your inbox so you know what needs attention.</li>
+      <li>Drafting and sending the emails and follow-ups you approve.</li>
+      <li>Reading your calendar to find availability and help schedule meetings.</li>
+      <li>Identifying which account we are acting for and signing you in.</li>
+    </ul>
 
-  <h2>6. Data storage, retention and deletion</h2>
-  <p>Your data is stored securely and encrypted in transit. We retain data only as long as needed to provide the service. You can disconnect GOD MODE from your Google account at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions</a>, and you can request deletion of your data by emailing us. When you disconnect or request deletion, we delete the associated data from our systems.</p>
+    <h2>4. Google API Limited Use disclosure</h2>
+    <div class="box">
+      <p>GOD MODE’s use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
+      <p>Specifically, we do <strong>not</strong> use Google user data to serve advertisements, we do <strong>not</strong> sell Google user data, and we do <strong>not</strong> use it to train generalised AI or machine-learning models. Human access to your Google data is not permitted except with your explicit consent, for security purposes, to comply with applicable law, or in aggregated and anonymised form.</p>
+    </div>
 
-  <h2>7. Security</h2>
-  <p>We use industry-standard safeguards to protect your information, including encryption in transit and access controls. No system is perfectly secure, but we work to keep your data protected and to limit access to only what is necessary.</p>
+    <h2>5. Data sharing</h2>
+    <p>We do not sell your data. We share it only with the service providers strictly required to run the platform (for example, secure cloud hosting), and only to the extent needed to deliver the features above. These providers are bound to protect your data and act only on our instructions.</p>
 
-  <h2>8. Your rights</h2>
-  <p>You may request access to, correction of, or deletion of your personal information, and you may withdraw permission at any time. To exercise these rights, contact us at <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
+    <h2>6. Storage, retention &amp; deletion</h2>
+    <p>Your data is stored securely and encrypted in transit. We retain it only as long as needed to provide the service. You can disconnect us from your Google account at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions</a>, and you can request deletion of your data by emailing us — on disconnection or request, we delete the associated data from our systems.</p>
 
-  <h2>9. Changes to this policy</h2>
-  <p>We may update this Privacy Policy from time to time. Material changes will be reflected here with an updated “Last updated” date.</p>
+    <h2>7. Security</h2>
+    <p>We use industry-standard safeguards, including encryption in transit and access controls, and limit access to only what is necessary.</p>
 
-  <h2>10. Contact</h2>
-  <p>Questions about this policy or your data? Email <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
-</main>
-<footer>
-  <div class="wrap">© 2026 GOD MODE. All rights reserved. · <a href="/">Home</a></div>
-</footer>
+    <h2>8. Your rights &amp; NZ Privacy Act</h2>
+    <p>Consistent with the New Zealand Privacy Act 2020, you may request access to, correction of, or deletion of your personal information, and you may withdraw permission at any time. To exercise these rights, email <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
+
+    <h2>9. Changes</h2>
+    <p>We may update this policy from time to time; material changes will be reflected here with a new “Last updated” date.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions about this policy or your data? Email <a href="mailto:divinemarketers@gmail.com">divinemarketers@gmail.com</a>.</p>
+  </div></main>
+
+  <footer><div class="container foot-inner">
+    <span>© 2017–2026 GOD MODE. Aotearoa New Zealand.</span>
+    <span><a href="/">Home</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Service</a></span>
+  </div></footer>
+</div>
 </body>
 </html>
