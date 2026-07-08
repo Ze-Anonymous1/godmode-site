@@ -2,3 +2,8 @@
 node_modules/
 shot-*.png
 shot-*.jpg
+
+# Electron app
+app/node_modules/
+app/.env
+app/dist/
