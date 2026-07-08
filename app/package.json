@@ -1,0 +1,20 @@
+{
+  "name": "godmode-browser",
+  "version": "0.1.0",
+  "description": "GOD MODE — the AI browser. An Electron desktop app with Claude wired in, LiveKit voice, and browser control.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "author": "GOD MODE",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "dotenv": "^16.4.5",
+    "livekit-client": "^2.6.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
