@@ -1,0 +1,4 @@
+# Local preview / build artifacts (not part of the static site)
+node_modules/
+shot-*.png
+shot-*.jpg
